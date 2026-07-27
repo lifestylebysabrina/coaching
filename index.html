@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[Ton Nom de Marque] — Coaching pour femmes en transition</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FBF1EC;
+    --blush:#F3D6DC;
+    --rose:#D98CA0;
+    --rose-deep:#B5677A;
+    --wine:#5B2333;
+    --plum:#6E4552;
+    --gold:#C9A15A;
+    --gold-light:#E4C98A;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    background:var(--cream);
+    color:var(--plum);
+    font-family:'Montserrat',sans-serif;
+    font-weight:300;
+    line-height:1.75;
+    overflow-x:hidden;
+  }
+
+  h1,h2,h3, .serif{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:500;
+    color:var(--wine);
+  }
+
+  .eyebrow{
+    font-family:'Montserrat',sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.28em;
+    font-size:0.72rem;
+    font-weight:500;
+    color:var(--gold);
+  }
+
+  a{color:inherit;text-decoration:none;}
+
+  .container{
+    max-width:1040px;
+    margin:0 auto;
+    padding:0 32px;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    background-image:url('assets/hero-bg.png');
+    background-size:cover;
+    background-position:center;
+    overflow:hidden;
+  }
+
+  .hero::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:radial-gradient(circle at 50% 40%, rgba(251,241,236,0.15) 0%, rgba(251,241,236,0.55) 75%, rgba(251,241,236,0.75) 100%);
+  }
+
+  .hero-content{
+    position:relative;
+    z-index:2;
+    padding:0 24px;
+    max-width:720px;
+  }
+
+  .hero .eyebrow{
+    display:block;
+    margin-bottom:28px;
+    opacity:0;
+    animation:fadeUp 1.1s ease forwards 0.2s;
+  }
+
+  .hero h1{
+    font-style:italic;
+    font-size:clamp(2.6rem, 6vw, 4.6rem);
+    line-height:1.15;
+    letter-spacing:-0.01em;
+    margin-bottom:26px;
+    opacity:0;
+    animation:fadeUp 1.1s ease forwards 0.5s;
+  }
+
+  .hero p{
+    font-size:1.05rem;
+    color:var(--plum);
+    max-width:520px;
+    margin:0 auto 40px;
+    opacity:0;
+    animation:fadeUp 1.1s ease forwards 0.8s;
+  }
+
+  .hero-cta{
+    opacity:0;
+    animation:fadeUp 1.1s ease forwards 1.1s;
+  }
+
+  @keyframes fadeUp{
+    from{opacity:0; transform:translateY(18px);}
+    to{opacity:1; transform:translateY(0);}
+  }
+
+  .btn{
+    display:inline-block;
+    padding:16px 40px;
+    border:1px solid var(--wine);
+    border-radius:999px;
+    font-family:'Montserrat',sans-serif;
+    font-size:0.78rem;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--wine);
+    transition:all 0.4s ease;
+  }
+  .btn:hover{
+    background:var(--wine);
+    color:var(--cream);
+  }
+  .btn.filled{
+    background:var(--wine);
+    color:var(--cream);
+  }
+  .btn.filled:hover{
+    background:var(--rose-deep);
+    border-color:var(--rose-deep);
+  }
+
+  .scroll-cue{
+    position:absolute;
+    bottom:36px;
+    left:50%;
+    transform:translateX(-50%);
+    width:1px;
+    height:56px;
+    background:linear-gradient(to bottom, transparent, var(--gold) 60%, transparent);
+    z-index:2;
+    opacity:0;
+    animation:fadeUp 1.1s ease forwards 1.4s;
+  }
+
+  /* ---------- SECTION GENERIC ---------- */
+  section{
+    padding:120px 0;
+    position:relative;
+  }
+
+  .section-head{
+    text-align:center;
+    margin-bottom:64px;
+  }
+  .section-head .eyebrow{margin-bottom:16px;}
+  .section-head h2{
+    font-style:italic;
+    font-size:clamp(2rem, 4vw, 2.9rem);
+    font-weight:500;
+  }
+
+  .divider{
+    width:60px;
+    height:1px;
+    background:var(--gold);
+    margin:28px auto 0;
+  }
+
+  /* ---------- POUR QUI ---------- */
+  .pourqui{
+    background:linear-gradient(180deg, var(--cream) 0%, var(--blush) 100%);
+  }
+  .pourqui-grid{
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:64px;
+    align-items:center;
+  }
+  .pourqui-text p{
+    margin-bottom:22px;
+    font-size:1.02rem;
+  }
+  .pourqui-text p:first-child{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:1.5rem;
+    color:var(--wine);
+    line-height:1.5;
+  }
+
+  .keyword-panel{
+    background:rgba(255,255,255,0.5);
+    border:1px solid rgba(197,161,90,0.35);
+    border-radius:4px;
+    padding:48px 36px;
+    display:flex;
+    flex-direction:column;
+    gap:22px;
+  }
+  .keyword-panel .kw{
+    display:flex;
+    align-items:baseline;
+    gap:14px;
+  }
+  .keyword-panel .kw span.mark{
+    color:var(--gold);
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:1.2rem;
+  }
+  .keyword-panel .kw span.label{
+    font-family:'Cormorant Garamond', serif;
+    font-size:1.4rem;
+    color:var(--wine);
+  }
+
+  /* ---------- DEROULE (signature thread) ---------- */
+  .deroule{
+    background:var(--cream);
+  }
+  .thread-wrap{
+    position:relative;
+    max-width:640px;
+    margin:0 auto;
+  }
+  .thread-svg{
+    position:absolute;
+    top:0;
+    left:24px;
+    height:100%;
+    width:3px;
+    z-index:0;
+  }
+  .thread-svg path{
+    fill:none;
+    stroke:var(--gold);
+    stroke-width:1.4;
+    stroke-linecap:round;
+    stroke-dasharray:4 3;
+    opacity:0.55;
+  }
+  .step{
+    position:relative;
+    padding-left:64px;
+    margin-bottom:56px;
+    z-index:1;
+  }
+  .step:last-child{margin-bottom:0;}
+  .step-dot{
+    position:absolute;
+    left:16px;
+    top:6px;
+    width:16px;
+    height:16px;
+    border-radius:50%;
+    background:var(--cream);
+    border:1.5px solid var(--gold);
+  }
+  .step h3{
+    font-style:italic;
+    font-size:1.5rem;
+    margin-bottom:8px;
+  }
+  .step p{
+    font-size:0.98rem;
+    color:var(--plum);
+    max-width:460px;
+  }
+
+  /* ---------- TARIFS ---------- */
+  .tarifs{
+    background:linear-gradient(180deg, var(--blush) 0%, var(--cream) 100%);
+  }
+  .price-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:32px;
+    max-width:760px;
+    margin:0 auto;
+  }
+  .price-card{
+    background:rgba(255,255,255,0.6);
+    border:1px solid rgba(197,161,90,0.4);
+    border-radius:6px;
+    padding:48px 36px;
+    text-align:center;
+    transition:transform 0.4s ease, box-shadow 0.4s ease;
+  }
+  .price-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 20px 40px rgba(181,103,122,0.15);
+  }
+  .price-card .eyebrow{margin-bottom:18px;}
+  .price-card .amount{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:3rem;
+    color:var(--wine);
+    margin-bottom:8px;
+  }
+  .price-card .amount sup{
+    font-size:1.1rem;
+    top:-1.2em;
+  }
+  .price-card .detail{
+    font-size:0.88rem;
+    color:var(--plum);
+    margin-bottom:28px;
+  }
+  .price-card.featured{
+    border-color:var(--gold);
+    background:rgba(255,255,255,0.85);
+  }
+
+  /* ---------- ET APRES ---------- */
+  .apres{
+    background:var(--wine);
+    color:var(--blush);
+    text-align:center;
+  }
+  .apres .eyebrow{color:var(--gold-light);}
+  .apres h2{color:var(--cream);}
+  .apres-list{
+    max-width:560px;
+    margin:0 auto;
+  }
+  .apres-list p{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:1.55rem;
+    color:var(--cream);
+    padding:20px 0;
+    border-bottom:1px solid rgba(228,201,138,0.25);
+  }
+  .apres-list p:last-child{border-bottom:none;}
+
+  /* ---------- QUOTE ---------- */
+  .quote-section{
+    background:var(--cream);
+    text-align:center;
+  }
+  .quote-section blockquote{
+    max-width:680px;
+    margin:0 auto;
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:clamp(1.5rem, 3vw, 2.1rem);
+    color:var(--wine);
+    line-height:1.6;
+  }
+  .quote-mark{
+    font-family:'Cormorant Garamond', serif;
+    font-size:4rem;
+    color:var(--gold);
+    line-height:1;
+    display:block;
+    margin-bottom:8px;
+  }
+  .quote-section cite{
+    display:block;
+    margin-top:28px;
+    font-family:'Montserrat',sans-serif;
+    font-style:normal;
+    font-size:0.8rem;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--gold);
+  }
+
+  /* ---------- CONTACT ---------- */
+  .contact{
+    position:relative;
+    background-image:url('assets/hero-bg.png');
+    background-size:cover;
+    background-position:center;
+    text-align:center;
+  }
+  .contact::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(251,241,236,0.82);
+  }
+  .contact .container{
+    position:relative;
+    z-index:1;
+  }
+  .contact-lead{
+    max-width:480px;
+    margin:0 auto 32px;
+    font-size:0.95rem;
+    color:var(--plum);
+  }
+
+  .calendly-inline-widget{
+    max-width:760px;
+    margin:0 auto;
+    border-radius:8px;
+    overflow:hidden;
+    box-shadow:0 20px 50px rgba(91,35,51,0.12);
+    background:rgba(255,255,255,0.4);
+  }
+
+  .contact-options{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-top:40px;
+  }
+
+  .form-wrap{
+    max-width:520px;
+    margin:56px auto 0;
+    text-align:left;
+  }
+  .form-wrap label{
+    display:block;
+    font-size:0.72rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--wine);
+    margin-bottom:8px;
+  }
+  .form-wrap input, .form-wrap textarea{
+    width:100%;
+    padding:14px 16px;
+    margin-bottom:24px;
+    border:1px solid rgba(91,35,51,0.25);
+    border-radius:3px;
+    background:rgba(255,255,255,0.6);
+    font-family:'Montserrat',sans-serif;
+    font-size:0.92rem;
+    color:var(--wine);
+  }
+  .form-wrap textarea{resize:vertical;min-height:110px;}
+  .form-wrap button{
+    width:100%;
+    cursor:pointer;
+    border:1px solid var(--wine);
+    background:var(--wine);
+    color:var(--cream);
+  }
+
+  footer{
+    text-align:center;
+    padding:40px 24px;
+    font-size:0.75rem;
+    letter-spacing:0.08em;
+    color:var(--plum);
+    background:var(--cream);
+  }
+
+  @media (max-width:760px){
+    .pourqui-grid{grid-template-columns:1fr;}
+    .price-grid{grid-template-columns:1fr;}
+    section{padding:80px 0;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important;}
+  }
+
+  :focus-visible{
+    outline:2px solid var(--gold);
+    outline-offset:3px;
+  }
+</style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-content">
+      <span class="eyebrow">Coaching émotionnel pour femmes</span>
+      <h1>Se relever, se retrouver,<br>se réenchanter</h1>
+      <p>Un accompagnement en douceur pour les femmes qui sortent d'une relation qui leur a laissé un goût amer — et qui sont prêtes à s'en remettre, pour de bon.</p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn filled">Réserver ma séance</a>
+      </div>
+    </div>
+    <div class="scroll-cue"></div>
+  </header>
+
+  <!-- POUR QUI -->
+  <section class="pourqui">
+    <div class="container">
+      <div class="pourqui-grid">
+        <div class="pourqui-text">
+          <p>Être triste après une rupture, c'est normal. Tu as besoin de faire le deuil de cette relation. Mais cela ne doit pas te prendre 6 mois.</p>
+          <p>J'accompagne les femmes en transition — celles qui portent encore le poids d'une histoire qui s'est refermée trop brutalement, ou trop douloureusement. Mon rôle : t'aider à retrouver ta confiance et l'estime que tu as pour toi, à ton rythme, avec douceur.</p>
+        </div>
+        <div class="keyword-panel">
+          <div class="kw"><span class="mark">—</span><span class="label">Sortir de la rupture</span></div>
+          <div class="kw"><span class="mark">—</span><span class="label">Traverser la transition</span></div>
+          <div class="kw"><span class="mark">—</span><span class="label">Se réapproprier son histoire</span></div>
+          <div class="kw"><span class="mark">—</span><span class="label">Renouer avec soi</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEROULE D'UNE SEANCE -->
+  <section class="deroule">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Objectif d'une séance</span>
+        <h2>Ce qui se passe, doucement</h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="thread-wrap">
+        <svg class="thread-svg" viewBox="0 0 3 600" preserveAspectRatio="none">
+          <path d="M1.5,0 L1.5,600"></path>
+        </svg>
+
+        <div class="step">
+          <span class="step-dot"></span>
+          <h3>Écoute</h3>
+          <p>Un espace pour poser les mots, sans jugement, sur ce que tu traverses.</p>
+        </div>
+        <div class="step">
+          <span class="step-dot"></span>
+          <h3>Compréhension</h3>
+          <p>Ce que cette relation t'a appris, ce qu'elle t'a réellement apporté — au-delà de la douleur.</p>
+        </div>
+        <div class="step">
+          <span class="step-dot"></span>
+          <h3>Sortir des schémas</h3>
+          <p>Repérer les conditionnements, les blessures et les schémas répétitifs, pour ne plus les revivre.</p>
+        </div>
+        <div class="step">
+          <span class="step-dot"></span>
+          <h3>Libération émotionnelle</h3>
+          <p>Un relâchement en séance, suivi de conseils de coaching concrets à appliquer au quotidien.</p>
+        </div>
+        <div class="step">
+          <span class="step-dot"></span>
+          <h3>Soin énergétique à distance</h3>
+          <p>Un temps dédié à ton énergie, pour clore la séance en douceur.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TARIFS -->
+  <section class="tarifs" id="tarifs">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Séances individuelles</span>
+        <h2>Tarifs</h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="price-grid">
+        <div class="price-card">
+          <span class="eyebrow">Séance unique</span>
+          <div class="amount">80€</div>
+          <p class="detail">Une séance pour poser un premier pas, ou pour un besoin ponctuel.</p>
+          <a href="#contact" class="btn">Je réserve</a>
+        </div>
+        <div class="price-card featured">
+          <span class="eyebrow">Accompagnement</span>
+          <div class="amount">180€</div>
+          <p class="detail">3 séances, à raison d'une par semaine, pour un vrai chemin de reconstruction.</p>
+          <a href="#contact" class="btn">Je réserve</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ET APRES -->
+  <section class="apres">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Et après ?</span>
+        <h2>Ce que tu retrouves</h2>
+      </div>
+      <div class="apres-list">
+        <p>Tu te sens plus libre et plus légère.</p>
+        <p>Tu as repris confiance en toi.</p>
+        <p>Tu as amélioré l'estime que tu as pour toi.</p>
+        <p>Tu cesses de répéter les mêmes erreurs.</p>
+        <p>Tu attires de nouvelles relations, un nouveau type d'homme.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE / POURQUOI -->
+  <section class="quote-section">
+    <div class="container">
+      <span class="quote-mark">"</span>
+      <blockquote>
+        Qu'elles continuent de garder le cœur ouvert et de croire en l'amour — même si elles sont tombées sur une épine.
+      </blockquote>
+      <cite>Mon grand pourquoi</cite>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Prendre rendez-vous</span>
+        <h2>Parlons-en</h2>
+        <div class="divider"></div>
+      </div>
+
+      <p class="contact-lead">Choisis directement un créneau ci-dessous — précise dans ton message si tu souhaites la séance unique ou le pack de 3.</p>
+
+      <!-- Calendly inline widget begin -->
+      <div class="calendly-inline-widget" data-url="https://calendly.com/laomeentreprise/seance-coaching?hide_gdpr_banner=1&background_color=fbf1ec&text_color=5b2333&primary_color=c9a15a" style="min-width:320px;height:720px;"></div>
+      <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+      <!-- Calendly inline widget end -->
+
+      <div class="contact-options">
+        <a class="btn" href="mailto:ton-email@exemple.com">Écrire un email</a>
+        <a class="btn" href="https://instagram.com/ton-compte" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>[Ton Nom de Marque] — Coaching pour femmes en transition</p>
+  </footer>
+
+</body>
+</html>
