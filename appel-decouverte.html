@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Appel découverte gratuit — Sabrina</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FBF1EC;
+    --blush:#F3D6DC;
+    --rose:#D98CA0;
+    --rose-deep:#B5677A;
+    --wine:#5B2333;
+    --plum:#6E4552;
+    --gold:#C9A15A;
+    --gold-light:#E4C98A;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+
+  body{
+    background:linear-gradient(180deg, var(--blush) 0%, var(--cream) 40%);
+    color:var(--plum);
+    font-family:'Montserrat',sans-serif;
+    font-weight:300;
+    line-height:1.75;
+  }
+
+  h1,h2, .serif{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:500;
+    color:var(--wine);
+  }
+
+  .eyebrow{
+    font-family:'Montserrat',sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.28em;
+    font-size:0.72rem;
+    font-weight:500;
+    color:var(--gold);
+  }
+
+  a{color:inherit;text-decoration:none;}
+
+  .container{
+    max-width:760px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+
+  /* ---------- HEADER ---------- */
+  .page-header{
+    padding:80px 0 56px;
+    text-align:center;
+  }
+
+  .photo-frame{
+    width:150px;
+    height:150px;
+    margin:0 auto 32px;
+    border-radius:50%;
+    overflow:hidden;
+    border:5px solid #fff;
+    box-shadow:0 20px 45px rgba(91,35,51,0.18);
+  }
+  .photo-frame img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+  }
+
+  .page-header .eyebrow{
+    display:block;
+    margin-bottom:20px;
+  }
+
+  .page-header h1{
+    font-style:italic;
+    font-size:clamp(2rem, 5vw, 2.8rem);
+    line-height:1.2;
+    margin-bottom:24px;
+  }
+
+  .page-header p{
+    max-width:520px;
+    margin:0 auto;
+    font-size:1.02rem;
+    color:var(--plum);
+  }
+
+  .page-header p.highlight{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:1.3rem;
+    color:var(--rose-deep);
+    margin-top:20px;
+  }
+
+  /* ---------- CE QUI T'ATTEND ---------- */
+  .expect{
+    padding:24px 0 56px;
+  }
+  .expect-list{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:20px;
+    margin-top:8px;
+  }
+  .expect-item{
+    background:rgba(255,255,255,0.55);
+    border:1px solid rgba(197,161,90,0.3);
+    border-radius:6px;
+    padding:26px 20px;
+    text-align:center;
+  }
+  .expect-item .num{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:1.8rem;
+    color:var(--gold);
+    display:block;
+    margin-bottom:10px;
+  }
+  .expect-item p{
+    font-size:0.88rem;
+    color:var(--plum);
+    line-height:1.5;
+  }
+  .no-pressure{
+    text-align:center;
+    margin-top:28px;
+    font-size:0.85rem;
+    color:var(--rose-deep);
+    font-style:italic;
+  }
+
+  @media (max-width:640px){
+    .expect-list{grid-template-columns:1fr;}
+  }
+
+  /* ---------- BOOKING ---------- */
+  .booking{
+    padding:24px 0 90px;
+  }
+  .booking .section-head{
+    text-align:center;
+    margin-bottom:32px;
+  }
+  .booking h2{
+    font-style:italic;
+    font-size:clamp(1.6rem, 4vw, 2.1rem);
+  }
+  .divider{
+    width:50px;
+    height:1px;
+    background:var(--gold);
+    margin:20px auto 0;
+  }
+
+  .calendly-inline-widget{
+    max-width:720px;
+    margin:0 auto;
+    border-radius:8px;
+    overflow:hidden;
+    box-shadow:0 20px 50px rgba(91,35,51,0.12);
+    background:rgba(255,255,255,0.4);
+  }
+
+  footer{
+    text-align:center;
+    padding:36px 24px 56px;
+    font-size:0.78rem;
+    color:var(--plum);
+  }
+  footer a{
+    color:var(--wine);
+    text-decoration:underline;
+    text-underline-offset:3px;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.01ms !important; transition-duration:0.01ms !important;}
+  }
+</style>
+</head>
+<body>
+
+  <header class="page-header">
+    <div class="container">
+      <div class="photo-frame">
+        <img src="assets/photo-appel.jpg" alt="Sabrina">
+      </div>
+      <span class="eyebrow">Appel découverte — 20 minutes, offert</span>
+      <h1>Faisons connaissance, avant de commencer</h1>
+      <p>Tu sors d'une relation qui t'a laissée à terre, ou tu ne sais plus vraiment qui tu es depuis que tu donnes tout aux autres. Cet appel, c'est un premier pas — sans engagement — pour poser des mots sur où tu en es.</p>
+      <p class="highlight">Il est temps de reprendre ta place.</p>
+    </div>
+  </header>
+
+  <section class="expect">
+    <div class="container">
+      <div class="expect-list">
+        <div class="expect-item">
+          <span class="num">1</span>
+          <p>On fait le point ensemble sur ce que tu traverses en ce moment</p>
+        </div>
+        <div class="expect-item">
+          <span class="num">2</span>
+          <p>Je t'explique concrètement comment je peux t'accompagner</p>
+        </div>
+        <div class="expect-item">
+          <span class="num">3</span>
+          <p>Tu repars avec de la clarté — que tu réserves une séance ou non</p>
+        </div>
+      </div>
+      <p class="no-pressure">Aucune obligation, aucun engagement. Juste 20 minutes pour toi.</p>
+    </div>
+  </section>
+
+  <section class="booking" id="reserver">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Choisis ton créneau</span>
+        <h2>Réserve ton appel</h2>
+        <div class="divider"></div>
+      </div>
+
+      <!-- Calendly inline widget begin -->
+      <div class="calendly-inline-widget" data-url="https://calendly.com/laomeentreprise/appel-gratuit-20-min?hide_gdpr_banner=1&background_color=fbf1ec&text_color=5b2333&primary_color=c9a15a" style="min-width:320px;height:700px;"></div>
+      <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+      <!-- Calendly inline widget end -->
+    </div>
+  </section>
+
+  <footer>
+    <p>[Ton Nom de Marque] — Coaching pour femmes en transition</p>
+    <p><a href="index.html">← Retour au site</a></p>
+  </footer>
+
+</body>
+</html>
